@@ -10,7 +10,7 @@ class Main extends React.Component {
 			<main>
 				{/* Main is the parent of HornedBeasts. Data is passed down from here into the HornedBeasts component.*/}
         <HornedBeasts title = "Unicorn" imgUrl = "./img/unicorn.jpg" description = "A realistic drawing of a the mythical horned equine, the unicorn."/>
-				<HornedBeasts title = "Irish Elk" imgUrl = ".img/irish-elk.jpg" description = "An artist's rendition of the extict Ice Age megafauna, the Irish Elk."/>
+				<HornedBeasts title = "Irish Elk" imgUrl = ".img/irish-elk.jpg" description = "An artist's rendition of the extinct Ice Age megafauna, the Irish Elk."/>
       </main>
 		)
 	}

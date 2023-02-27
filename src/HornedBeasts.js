@@ -6,7 +6,7 @@ class HornedBeasts extends React.Component {
 			<article>
 			{/* "title" is passed down from parent component Main */}
 			<h2>{this.props.title}</h2>
-			<img src= {this.props.img} alt={this.props.description}></img>
+			<img src= {this.props.imgURL} alt={this.props.description}></img>
 			<p>{this.props.description}</p>
 			</article>
 		);
