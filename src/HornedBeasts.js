@@ -4,9 +4,10 @@ class HornedBeasts extends React.Component {
 	render () {
 		return (
 			<article>
-			<h1>HornedBeasts</h1>
-			{/* "name" is passed down from parent component Main */}
-			<p>{this.props.name}</p>
+			{/* "title" is passed down from parent component Main */}
+			<h2>{this.props.title}</h2>
+			<img src= {this.props.img} alt={this.props.description}></img>
+			<p>{this.props.description}</p>
 			</article>
 		);
 	}
