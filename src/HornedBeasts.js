@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './HornedBeasts.css';
 
 class HornedBeasts extends React.Component {
 	render () {
@@ -6,7 +7,7 @@ class HornedBeasts extends React.Component {
 			<article>
 			{/* "title" is passed down from parent component Main */}
 			<h2>{this.props.title}</h2>
-			<img src= {this.props.imgUrl} alt={this.props.description}></img>
+			<img src= {this.props.imgUrl} alt={this.props.name}></img>
 			<p>{this.props.description}</p>
 			</article>
 		);

@@ -1,6 +1,7 @@
 // create a class-based component
 // required pieces: import, class, and export
 import React from 'react';
+import './Footer.css';
 
 class Footer extends React.Component {
 

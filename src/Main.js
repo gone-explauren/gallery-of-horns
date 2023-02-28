@@ -2,6 +2,7 @@
 // required pieces: import, class, and export
 import React from 'react';
 import HornedBeasts from './HornedBeasts';
+import './Main.css';
 
 class Main extends React.Component {
 
@@ -21,3 +22,35 @@ class Main extends React.Component {
 
 // don't forget to import in App.js!
 export default Main;
+
+
+
+// // this would be on the App.js page
+// Import data from 'data.json';
+
+// // this is coming from the component js "People" which, for this lab, is HornedBeasts
+// Import Person from './Person';
+
+// class Main extends React.Component {
+// 	render() {
+// 		let people = [];
+// // there is a counter built into forEach(), refering to the current index of the array being processed
+// 		this.props.data.forEach((peep, idx) => {
+//	people.push(
+// 			<Person
+// 			name={peep.name}
+// 			imgUrl={peep.imgUrl}
+// // assign each Person a unique key property
+//			key={idx}
+// 			/>
+//		 );
+// 		})
+// 		return (
+// 			<main>
+// 					{people}
+//       </main>
+// 		)
+// 	}
+// };
+
+// export default Main;
