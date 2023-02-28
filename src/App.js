@@ -52,3 +52,8 @@ class App extends React.Component {
 export default App;
 
 // // npm run start in terminal to view React in browser
+// // localhost:3000
+
+// // Deploying a React page:
+// // GitHub pages does not work with React, so we use Netlify and import from our GitHub repo.
+// // Deployed pages on Netlify will automatically update when ACP to GitHub
