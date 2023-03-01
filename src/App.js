@@ -35,14 +35,31 @@ import Footer from './components/Footer';
 import './App.css';
 
 class App extends React.Component {
+  // send as props to header where the hearts will show up, but also to main, which ha access to HornedBeasts where the click event happens
+  constructor(props) {
+    super(props);
+    this.state = {
+      hearts: ''
+    }
+  }
+
+  // pass the method addHearts down to HornedBeasts component, where the click event is happening
+  addHearts = () => {
+    // this is the only way to update the value of state, you must use this method
+    this.setState({
+      // keep adding hearts as this method is evoked (ie. each time an image is liked, based on the onClick added below)
+      hearts: this.state.hearts + '😍'
+    })
+  }
 
   render() {
     return (
       // fractional elements to render sibling jsx (html) tags
       <>
       {/* syntax to use the React Component created in Header.js */}
-      <Header/>
-      <Main/>
+      <Header hearts={this.state.hearts}/>
+      <p onClick={this.addHearts}></p>
+      <Main addHearts={this.addHearts}/>
       <Footer/>
       </>)
   }

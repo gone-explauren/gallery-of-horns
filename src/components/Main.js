@@ -15,6 +15,8 @@ class Main extends React.Component {
 			beastsArr.push(
 				<HornedBeasts
 					title={beast.title}
+					// accessing addHearts method from App.js
+					addHearts={this.props.addHearts}
 					image_url={beast.image_url}
 					description={beast.description}
 					key={idx}
