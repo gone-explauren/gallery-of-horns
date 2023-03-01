@@ -11,13 +11,14 @@ class Main extends React.Component {
 		// console.log(data);
 		let beastsArr = [];
 		data.forEach((beast, idx) => {
-			console.log(beast);
+			// console.log(beast);
 			beastsArr.push(
 				<HornedBeasts
 					title={beast.title}
 					// accessing addHearts method from App.js
 					addHearts={this.props.addHearts}
-					onClick={this.props.handleOpenModal}
+					// accessing handleOpenModal method from App.js
+					handleOpenModal={this.props.handleOpenModal}
 					image_url={beast.image_url}
 					description={beast.description}
 					key={idx}
