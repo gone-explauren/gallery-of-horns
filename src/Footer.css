@@ -1,0 +1,9 @@
+footer {
+	height: 50px;
+	background-color: rgb(248, 156, 172);
+	color: black;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 24px;
+	padding-top: 10px;
+	padding-left: .5rem;
+}
