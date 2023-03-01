@@ -24,6 +24,9 @@ class HornedBeasts extends React.Component {
 		})
 	};
 
+	handleHeaderClick = () => {
+		this.props.handleOpenModal(this.props.data);
+	};
 
 	render() {
 		console.log(this.props);
@@ -31,7 +34,7 @@ class HornedBeasts extends React.Component {
 			<Card style={{ width: '18rem' }}>
 				<article className='hornedBeasts'>
 					<div className='card-header'>
-						<h2>{this.props.title}</h2>
+						<h2 onClick={this.props.handleOpenModal}>{this.props.title}</h2>
 						{/* Ternary */}
 						<div>{this.state.liked ? '😍😍😍' : ''}</div>
 					</div>
@@ -48,6 +51,7 @@ class HornedBeasts extends React.Component {
 							alt={this.props.title}
 							// when an image is clicked, a heart will appear in the Header
 							onClick={this.props.addHearts}
+							// duplicate onClick not allowed
 							/>
 						<p>{this.props.description}</p>
 					</Card.Body>

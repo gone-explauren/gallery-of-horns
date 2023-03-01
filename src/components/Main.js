@@ -8,7 +8,7 @@ import './Main.css';
 class Main extends React.Component {
 
 	render() {
-		console.log(data);
+		// console.log(data);
 		let beastsArr = [];
 		data.forEach((beast, idx) => {
 			console.log(beast);
@@ -17,6 +17,7 @@ class Main extends React.Component {
 					title={beast.title}
 					// accessing addHearts method from App.js
 					addHearts={this.props.addHearts}
+					onClick={this.props.handleOpenModal}
 					image_url={beast.image_url}
 					description={beast.description}
 					key={idx}
