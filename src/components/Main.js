@@ -1,7 +1,7 @@
 // create a class-based component
 // required pieces: import, class, and export
 import React from 'react';
-import data from './data.json';
+import data from '../data.json';
 import HornedBeasts from './HornedBeasts';
 import './Main.css';
 
