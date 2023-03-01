@@ -28,18 +28,18 @@ class HornedBeasts extends React.Component {
 	render() {
 		console.log(this.props);
 		return (
-			<Card style={{ width: '18rem' }} className='p-1 h-100'>
+			<Card style={{ width: '18rem' }}>
 				<article className='hornedBeasts'>
-					<Card.Header>
+					<div className='card-header'>
 						<h2>{this.props.title}</h2>
 						{/* Ternary */}
 						<div>{this.state.liked ? '😍😍😍' : ''}</div>
-					</Card.Header>
+					</div>
 					<Card.Body>
 						<div className='hearts'>
-						{/* "title" is passed down from parent component Main */}
-						<p>{this.state.likes} &hearts;'s</p>
-						<p onClick={this.handleLikes}>💗</p>
+							{/* "title" is passed down from parent component Main */}
+							<p>{this.state.likes} &hearts;'s</p>
+							<p onClick={this.handleLikes}>💗</p>
 						</div>
 						<Card.Img
 							src={this.props.image_url}

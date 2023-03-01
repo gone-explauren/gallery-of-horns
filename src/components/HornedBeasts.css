@@ -25,6 +25,10 @@
 
 .card-header {
 	text-align: center;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	/* the Bootstrap imported card has styles added that I don't like. They show up in the inspection tool in the browser, but not in VS Code. These two styles were added to negate the default styles imported from Bootstrap. */
+	background-color: white;
+	border-bottom: none;
 }
 
 .card {
@@ -34,5 +38,5 @@
 .card img {
 	border: 1px solid black !important;
 	width: 250px;
-	height: 300px;
+	height: 250px;
 };
