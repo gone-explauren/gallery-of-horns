@@ -39,12 +39,16 @@ class HornedBeasts extends React.Component {
 						<div className='hearts'>
 							{/* "title" is passed down from parent component Main */}
 							<p>{this.state.likes} &hearts;'s</p>
+							{/* we need a helper function (Modal) to process two seperate functions onClick */}
+							{/*, this.props.addHearts}*/}
 							<p onClick={this.handleLikes}>💗</p>
 						</div>
 						<Card.Img
 							src={this.props.image_url}
 							alt={this.props.title}
-						/>
+							// when an image is clicked, a heart will appear in the Header
+							onClick={this.props.addHearts}
+							/>
 						<p>{this.props.description}</p>
 					</Card.Body>
 				</article>
