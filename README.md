@@ -12,7 +12,7 @@
 
 ### Lab-02
 
-* Number and name of feature: Display Images
+* Feature 1: Display Images
 Estimate of time needed to complete: 30min
 
 Start time: 1:25PM
@@ -21,7 +21,7 @@ Finish time: 1:47PM
 
 Actual time needed to complete: 22min
 
-* Number and name of feature: Allow Users to Favorite Individual Beasts
+* Feature 2: Allow Users to Favorite Individual Beasts
 
 Estimate of time needed to complete: 1hr
 
@@ -31,7 +31,7 @@ Finish time: 2:33PM
 
 Actual time needed to complete: 45min
 
-* Number and name of feature: Bootstrap
+* Feature 3: Bootstrap
 
 Estimate of time needed to complete: 2hr
 
@@ -40,6 +40,21 @@ Start time: 2:34PM
 Finish time: 4:03PM
 
 Actual time needed to complete: 1hr, 29min
+
+### Lab-03
+
+* Feature 1: Modal
+Estimate of time needed to complete: 4hr
+
+Start time: 11:05PM
+
+Start Break: 12:40PM
+
+End Break: 2:52PM
+
+Finish time:
+
+Actual time needed to complete: 
 
 ## References
 

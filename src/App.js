@@ -54,13 +54,13 @@ class App extends React.Component {
       beastName: ''
     })
   }
-  
-    handleOpenModal = (title) => {
-      this.setState({
-        showModal: true,
-        beastName: title
-      })
-    }
+
+  handleOpenModal = (title) => {
+    this.setState({
+      showModal: true,
+      beastName: title
+    })
+  }
 
   handleCloseModal = () => {
     this.setState({
@@ -74,9 +74,11 @@ class App extends React.Component {
       <>
         {/* syntax to use the React Component created in Header.js */}
         <Header hearts={this.state.hearts} />
-        <p onClick={this.addHearts}></p>
-        <p onClick={this.handleOpenModal}></p>
-        <Main addHearts={this.addHearts} />
+        <Main 
+          /* These are the methods I want to pass down to Main */
+          addHearts={this.addHearts} 
+          handleOpenModal={this.handleOpenModal} 
+        />
         <Footer />
         <Modal
           show={this.state.showModal}
