@@ -33,4 +33,6 @@
 
 .card img {
 	border: 1px solid black !important;
+	width: 250px;
+	height: 300px;
 };
