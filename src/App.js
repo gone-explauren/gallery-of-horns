@@ -32,6 +32,7 @@ import React from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import Modal from 'react-bootstrap/Modal'
 import './App.css';
 
 class App extends React.Component {
@@ -48,7 +49,22 @@ class App extends React.Component {
     // this is the only way to update the value of state, you must use this method
     this.setState({
       // keep adding hearts as this method is evoked (ie. each time an image is liked, based on the onClick added below)
-      hearts: this.state.hearts + '😍'
+      hearts: this.state.hearts + '😍',
+      showModal: false,
+      beastName: ''
+    })
+  }
+  
+    handleOpenModal = (title) => {
+      this.setState({
+        showModal: true,
+        beastName: title
+      })
+    }
+
+  handleCloseModal = () => {
+    this.setState({
+      showModal: false,
     })
   }
 
@@ -56,11 +72,20 @@ class App extends React.Component {
     return (
       // fractional elements to render sibling jsx (html) tags
       <>
-      {/* syntax to use the React Component created in Header.js */}
-      <Header hearts={this.state.hearts}/>
-      <p onClick={this.addHearts}></p>
-      <Main addHearts={this.addHearts}/>
-      <Footer/>
+        {/* syntax to use the React Component created in Header.js */}
+        <Header hearts={this.state.hearts} />
+        <p onClick={this.addHearts}></p>
+        <p onClick={this.handleOpenModal}></p>
+        <Main addHearts={this.addHearts} />
+        <Footer />
+        <Modal
+          show={this.state.showModal}
+          onHide={this.handleCloseModal}
+        >
+          <Modal.Header>
+            <Modal.Title>{this.state.beastName}</Modal.Title>
+          </Modal.Header>
+        </Modal>
       </>)
   }
 
