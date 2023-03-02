@@ -68,3 +68,8 @@ Actual time needed to complete: 3hr, 30min
 * Thank you, Kam, for helping me understand the CSS inspection tool in the browser.
 * Thank you, Instructor Sheyna, for helping me undestand how to stylize components imported from Bootstrap.
 * Thank you, Daniel, for helping me understand the difference between align-items and justify-conent in CSS using display: flex.
+
+### Lab-03
+
+* Thank you, Instructor Sheyna, for helping me fix CSS.
+* Thank you, Daniel, for showing me how to use the img tag in jsx to display images.
