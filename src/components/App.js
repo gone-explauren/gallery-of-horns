@@ -25,16 +25,18 @@
 
 // export default App;
 
-// // commented out to write the code myself...
+// // commented out to write the code myself as a class-based component...
 
 // // React class component
 import React from 'react';
 import Header from './Header';
 import Main from './Main';
-import SelectedBeast from './SelectedBeast';
 import Footer from './Footer';
+import SelectedBeast from './SelectedBeast'
 // // Modal moved to SelectedBeast component
 // import Modal from 'react-bootstrap/Modal'
+import BeastForm from'./BeastForm'
+import data from '../data.json';
 import './App.css';
 
 class App extends React.Component {
@@ -46,6 +48,7 @@ class App extends React.Component {
       beastName: '',
       beastImg: '',
       beastDescription: '',
+      data: data,
       showModal: false
     }
   }
@@ -81,11 +84,15 @@ class App extends React.Component {
       // fractional elements to render sibling jsx (html) tags
       <>
         {/* syntax to use the React Component created in Header.js */}
-        <Header hearts={this.state.hearts} />
+        <Header hearts={this.state.hearts}/>
         <Main 
           /* These are the methods I want to pass down to Main */
           addHearts={this.addHearts} 
           handleOpenModal={this.handleOpenModal} 
+          data={this.state.data}
+        />
+        <BeastForm
+          data={this.data}
         />
         <SelectedBeast 
           /* Pass these methods down to SelectedBeast.js */
