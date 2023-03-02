@@ -1,0 +1,23 @@
+.modal {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.header {
+	text-align: center;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	/* the Bootstrap imported card has styles added that I don't like. They show up in the inspection tool in the browser, but not in VS Code. These two styles were added to negate the default styles imported from Bootstrap. */
+	background-color: white;
+	border-bottom: none;
+}
+
+.body {
+	margin: .25rem;
+}
+
+.body img {
+	border: 1px solid black !important;
+	width: 450px;
+	height: 450px;
+}
