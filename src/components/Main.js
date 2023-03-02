@@ -1,7 +1,6 @@
 // create a class-based component
 // required pieces: import, class, and export
 import React from 'react';
-import data from '../data.json';
 import HornedBeasts from './HornedBeasts';
 import './Main.css';
 
@@ -10,7 +9,7 @@ class Main extends React.Component {
 	render() {
 		// console.log(data);
 		let beastsArr = [];
-		data.forEach((beast, idx) => {
+		this.props.data.forEach((beast, idx) => {
 			// console.log(beast);
 			beastsArr.push(
 				<HornedBeasts
