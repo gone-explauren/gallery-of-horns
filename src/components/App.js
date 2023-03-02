@@ -29,10 +29,12 @@
 
 // // React class component
 import React from 'react';
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
-import Modal from 'react-bootstrap/Modal'
+import Header from './Header';
+import Main from './Main';
+import SelectedBeast from './SelectedBeast';
+import Footer from './Footer';
+// // Modal moved to SelectedBeast component
+// import Modal from 'react-bootstrap/Modal'
 import './App.css';
 
 class App extends React.Component {
@@ -40,7 +42,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hearts: ''
+      hearts: '',
+      beastName: '',
+      beastImg: '',
+      beastDescription: '',
+      showModal: false
     }
   }
 
@@ -50,21 +56,23 @@ class App extends React.Component {
     this.setState({
       // keep adding hearts as this method is evoked (ie. each time an image is liked, based on the onClick added below)
       hearts: this.state.hearts + '😍',
-      showModal: false,
-      beastName: ''
     })
   }
 
-  handleOpenModal = (title) => {
+  // Modal moved to SelectedBeasts component, but these methods live in App.js to be passed down to all of App.js's children components (handleOpenModal needs to be used in HornedBeasts.js and handleCloseModal needs to be used in SelectedBeast.js)
+  handleOpenModal = (title, image_url, description) => {
     this.setState({
-      showModal: true,
-      beastName: title
+      beastName: title,
+      beastImg: image_url,
+      beastDescription: description,
+      showModal: true
     })
   }
 
   handleCloseModal = () => {
     this.setState({
       showModal: false,
+      beastName: ''
     })
   }
 
@@ -79,7 +87,18 @@ class App extends React.Component {
           addHearts={this.addHearts} 
           handleOpenModal={this.handleOpenModal} 
         />
+        <SelectedBeast 
+          /* Pass these methods down to SelectedBeast.js */
+          handleCloseModal={this.handleCloseModal}
+          beastName={this.state.beastName}
+          beastImg={this.state.beastImg}
+          beastDescription={this.state.beastDescription}
+          showModal={this.state.showModal}
+        />
         <Footer />
+        {/* 
+        // // Modal moved to SelectedBeasts component
+        
         <Modal
           show={this.state.showModal}
           onHide={this.handleCloseModal}
@@ -87,7 +106,9 @@ class App extends React.Component {
           <Modal.Header>
             <Modal.Title>{this.state.beastName}</Modal.Title>
           </Modal.Header>
-        </Modal>
+        </Modal> 
+        
+        */}
       </>)
   }
 
