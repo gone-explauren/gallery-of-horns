@@ -52,9 +52,9 @@ Start Break: 12:40PM
 
 End Break: 2:52PM
 
-Finish time:
+Finish time: 4:47PM
 
-Actual time needed to complete: 
+Actual time needed to complete: 3hr, 30min
 
 ## References
 
