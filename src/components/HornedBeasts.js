@@ -5,8 +5,8 @@ import './HornedBeasts.css';
 
 
 class HornedBeasts extends React.Component {
+	
 	constructor(props) {
-
 		// super brings down all of the data from the previous component
 		super(props);
 		this.state = {

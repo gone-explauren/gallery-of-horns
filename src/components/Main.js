@@ -7,10 +7,10 @@ import './Main.css';
 class Main extends React.Component {
 
 	render() {
-		// console.log(data);
+		// console.log(this.props.data);
 		let beastsArr = [];
-		this.props.data.forEach((beast, idx) => {
-			// console.log(beast);
+		this.props.filterData.forEach((beast, idx) => {
+		// 	// console.log(beast);
 			beastsArr.push(
 				<HornedBeasts
 					title={beast.title}
@@ -23,7 +23,8 @@ class Main extends React.Component {
 					key={idx}
 				/>
 			);
-		})
+		});
+
 		return (
 			<main>
 				{/*  

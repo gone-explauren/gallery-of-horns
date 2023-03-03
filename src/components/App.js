@@ -19,7 +19,7 @@
 //           Learn React
 //         </a>
 //       </header>
-//     </div>
+//     </div> 
 //   );
 // }
 
@@ -35,12 +35,12 @@ import Footer from './Footer';
 import SelectedBeast from './SelectedBeast'
 // // Modal moved to SelectedBeast component
 // import Modal from 'react-bootstrap/Modal'
-import BeastForm from'./BeastForm'
+import BeastForm from './BeastForm'
 import data from '../data.json';
 import './App.css';
 
 class App extends React.Component {
-  // send as props to header where the hearts will show up, but also to main, which ha access to HornedBeasts where the click event happens
+
   constructor(props) {
     super(props);
     this.state = {
@@ -49,11 +49,13 @@ class App extends React.Component {
       beastImg: '',
       beastDescription: '',
       data: data,
+      filterData: data,
+      howToSortSelected: '',
       showModal: false
     }
   }
 
-  // pass the method addHearts down to HornedBeasts component, where the click event is happening
+  // method to pass down to HornedBeasts component, where the click event is happening
   addHearts = () => {
     // this is the only way to update the value of state, you must use this method
     this.setState({
@@ -62,7 +64,47 @@ class App extends React.Component {
     })
   }
 
-  // Modal moved to SelectedBeasts component, but these methods live in App.js to be passed down to all of App.js's children components (handleOpenModal needs to be used in HornedBeasts.js and handleCloseModal needs to be used in SelectedBeast.js)
+
+  // methods to be passed down to BeastForm
+  handleSubmit = (event) => {
+    event.preventDefault();
+    // console.log(this.state.howToSortSelected);
+
+    if (this.state.howToSortSelected === 'all') {
+      this.setState({ filterData: data })
+
+    } else if (this.state.howToSortSelected === 'one') {
+      // displays only data that equals 1
+      let newData = data.filter(num => {
+        // console.log(num.horns);
+        return num.horns === 1});
+      this.setState({ filterData: newData })
+
+    } else if (this.state.howToSortSelected === 'two') {
+      let newData = data.filter(num => num.horns === 2);
+      this.setState({ filterData: newData })
+
+    } else if (this.state.howToSortSelected === 'three') {
+      let newData = data.filter(num => num.horns === 3);
+      this.setState({ filterData: newData })
+
+    } else {
+      let newData = data.filter(num => num.horns !== 1 && num.horns !== 2 && num.horns !== 3);
+      this.setState({ filterData: newData })
+
+    }
+  }
+
+  handleSelectionOnChange = (event) => {
+    // no prevent default because this is not a submit event
+    // this updates the state more instantaneously than it would on it's own, so I can use this data right away
+    this.setState({
+      howToSortSelected: event.target.value
+    })
+  }
+
+
+  // methods to be passed down to SelectedBeasts
   handleOpenModal = (title, image_url, description) => {
     this.setState({
       beastName: title,
@@ -80,29 +122,41 @@ class App extends React.Component {
   }
 
   render() {
+    // console.log(this.state.howToSortSelected)
     return (
       // fractional elements to render sibling jsx (html) tags
       <>
-        {/* syntax to use the React Component created in Header.js */}
-        <Header hearts={this.state.hearts}/>
-        <Main 
-          /* These are the methods I want to pass down to Main */
-          addHearts={this.addHearts} 
-          handleOpenModal={this.handleOpenModal} 
+
+        <Header hearts={this.state.hearts} />
+
+        <Main
+          // These are the methods I want to pass down to Main 
+          addHearts={this.addHearts}
+          handleOpenModal={this.handleOpenModal}
+          filterData={this.state.filterData}
+        />
+
+       <BeastForm
+          // Pass these methods down to BeastForm 
           data={this.state.data}
-        />
-        <BeastForm
-          data={this.data}
-        />
-        <SelectedBeast 
-          /* Pass these methods down to SelectedBeast.js */
+          filterData={this.state.filterData}
+          howToSort={this.state.howToSort}
+          // do I want to pass these to BeastForm or to HornedBeasts to render them? 
+          handleSubmit={this.handleSubmit}
+          handleSelectionOnChange={this.handleSelectionOnChange}
+       />
+
+        <SelectedBeast
+          // Pass these methods down to SelectedBeast.js 
           handleCloseModal={this.handleCloseModal}
           beastName={this.state.beastName}
           beastImg={this.state.beastImg}
           beastDescription={this.state.beastDescription}
           showModal={this.state.showModal}
         />
+
         <Footer />
+
         {/* 
         // // Modal moved to SelectedBeasts component
         
@@ -116,6 +170,7 @@ class App extends React.Component {
         </Modal> 
         
         */}
+
       </>)
   }
 

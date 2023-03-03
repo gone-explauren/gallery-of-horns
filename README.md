@@ -56,6 +56,17 @@ Finish time: 4:47PM
 
 Actual time needed to complete: 3hr, 30min
 
+### Lab-04
+
+* Feature 1: React Form
+Estimate of time needed to complete: 3hr
+
+Start time: 12:34PM
+
+Finish time: 3:48PM
+
+Actual time needed to complete: 3hr, 14min
+
 ## References
 
 ### Lab-01
