@@ -84,3 +84,9 @@ Actual time needed to complete: 3hr, 14min
 
 * Thank you, Instructor Sheyna, for helping me fix CSS.
 * Thank you, Daniel, for showing me how to use the img tag in jsx to display images.
+
+### Lab-04
+
+* Thank you, TA Michael, for helping me figure out why my form wasn't showing up.
+* Thank you, Instructor Sheyna, for helping me fix my handleSubmit function.
+* Thank you, Michael, for sending me the visual aid you maid for understanding methods passed down as props.

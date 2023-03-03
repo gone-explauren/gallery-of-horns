@@ -1,0 +1,44 @@
+.form-style {
+	background-color: pink;
+	padding: 1rem;
+	padding-left: 1.75rem;
+}
+
+.form-header {
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+	font-size: 18pt;
+}
+
+.select-and-submit {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+}
+
+.form-control {
+	width: 7.5%;
+	margin-right: 5px;
+	border-color: hotpink;
+}
+
+.form-control:focus {
+	border-color: blue;
+	/* trying to change the shadow to midnigt blue...
+	box-shadow: 0 0 0 0 .25rem (25 25 112 / 25%); */
+}
+
+/* trying to change each individual option to midnight blue at hover...
+option.style:hover {
+	background-color: 25 25 112 / 25%;
+} */
+
+.btn-primary {
+	background-color: crimson;
+	border-color: hotpink;
+}
+
+.btn-primary:hover {
+	background-color: midnightblue;
+	border-color: blue;
+}

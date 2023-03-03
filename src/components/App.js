@@ -77,7 +77,8 @@ class App extends React.Component {
       // displays only data that equals 1
       let newData = data.filter(num => {
         // console.log(num.horns);
-        return num.horns === 1});
+        return num.horns === 1
+      });
       this.setState({ filterData: newData })
 
     } else if (this.state.howToSortSelected === 'two') {
@@ -129,14 +130,7 @@ class App extends React.Component {
 
         <Header hearts={this.state.hearts} />
 
-        <Main
-          // These are the methods I want to pass down to Main 
-          addHearts={this.addHearts}
-          handleOpenModal={this.handleOpenModal}
-          filterData={this.state.filterData}
-        />
-
-       <BeastForm
+        <BeastForm
           // Pass these methods down to BeastForm 
           data={this.state.data}
           filterData={this.state.filterData}
@@ -144,7 +138,14 @@ class App extends React.Component {
           // do I want to pass these to BeastForm or to HornedBeasts to render them? 
           handleSubmit={this.handleSubmit}
           handleSelectionOnChange={this.handleSelectionOnChange}
-       />
+        />
+
+        <Main
+          // These are the methods I want to pass down to Main 
+          addHearts={this.addHearts}
+          handleOpenModal={this.handleOpenModal}
+          filterData={this.state.filterData}
+        />
 
         <SelectedBeast
           // Pass these methods down to SelectedBeast.js 
