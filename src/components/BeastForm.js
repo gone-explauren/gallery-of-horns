@@ -11,7 +11,7 @@ class BeastForm extends React.Component {
 
 		let selectedNumberHorns = this.props.filterData.map((beast, idx) => {
 			// console.log(beast);
-			<ListGroup.Item key={idx}>
+			return <ListGroup.Item key={idx}>
 				{beast}
 			</ListGroup.Item>;
 		})
