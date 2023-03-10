@@ -124,6 +124,7 @@ class App extends React.Component {
 
   render() {
     // console.log(this.state.howToSortSelected)
+    // why isnt this working
     return (
       // fractional elements to render sibling jsx (html) tags
       <>

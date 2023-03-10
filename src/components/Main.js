@@ -8,6 +8,7 @@ class Main extends React.Component {
 
 	render() {
 		// console.log(this.props.data);
+		// console.log(this.props.filterData);
 		let beastsArr = [];
 		this.props.filterData.forEach((beast, idx) => {
 		// 	// console.log(beast);
